@@ -1,0 +1,27 @@
+{
+  "name": "@infracia/razorpay",
+  "version": "2.0.0",
+  "description": "razorpay api wrapper for nodejs",
+  "main": "build/index.js",
+  "types": "build/index.d.js",
+  "repository": "https://github.com/infracia/razorpay",
+  "author": "Vijay Meena <sumarmeena@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noemit"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.11.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
