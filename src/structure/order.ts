@@ -4,8 +4,7 @@ import type {
   RawPaymentEntity,
   RawTransferEntity,
 } from "../types/index.js";
-import { Payment } from "./payment.js";
-import { Transfer } from "./transfer.js";
+import { Payment, Transfer } from "./index.js";
 
 export class Order {
   constructor(public client: Razorpay, public raw: RawOrderEntity) {}

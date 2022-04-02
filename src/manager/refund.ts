@@ -1,5 +1,5 @@
 import type { Razorpay } from "../index.js";
-import { Refund } from "../structure/refund.js";
+import { Refund } from "../structure/index.js";
 import type { RawRefundEntity } from "../types/index.js";
 
 export class RefundManager {

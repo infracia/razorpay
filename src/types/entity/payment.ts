@@ -16,7 +16,7 @@ export interface RawPaymentEntity {
   currency: string;
   description: string;
   email: string;
-  entity: string;
+  entity: "payment";
   error_code: string;
   error_description: string;
   error_reason: string;

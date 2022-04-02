@@ -21,18 +21,6 @@ export interface RawTransferEntity {
   tax: number;
 }
 
-export type RawTransferCreateBody = {
-  account: string;
-  amount: number;
-  currency: ISOCodes;
-  linked_account_notes: string[];
-  notes: {
-    [key: string]: string;
-  };
-  on_hold: number;
-  on_hold_until: number;
-};
-
 export type RawTransferCreateResponse = {
   count: number;
   entity: "collection";

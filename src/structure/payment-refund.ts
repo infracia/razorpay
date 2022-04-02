@@ -4,7 +4,7 @@ import type {
   RawRefundEntity,
   RawRefundPayload,
 } from "../types/index.js";
-import { Refund } from "./refund.js";
+import { Refund } from "./index.js";
 
 export class PaymentRefund {
   constructor(public client: Razorpay, public raw: RawPaymentEntity) {}

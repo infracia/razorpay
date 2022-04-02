@@ -1,7 +1,22 @@
 import type { Axios } from "axios";
 import axios from "axios";
 
-import { OrderManager, PaymentManager } from "./manager/index.js";
+import {
+  AddonManager,
+  CustomerManager,
+  InvoiceManager,
+  ItemManager,
+  OrderManager,
+  PaymentLinkManager,
+  PaymentManager,
+  PlanManager,
+  RefundManager,
+  SettlementManager,
+  SettlementOnDemandManager,
+  SubscriptionManager,
+  TransferManager,
+  VirtualAccountManager,
+} from "./manager/index.js";
 
 export type RazorpayOptions = {
   apiUrl?: string;
@@ -17,9 +32,21 @@ export class Razorpay {
   private _ua;
   private _axios;
 
-  // managers
+  // Managers
+  addon: AddonManager;
+  customer: CustomerManager;
+  invoice: InvoiceManager;
+  item: ItemManager;
   order: OrderManager;
+  paymentLink: PaymentLinkManager;
   payment: PaymentManager;
+  plan: PlanManager;
+  refund: RefundManager;
+  settlement: SettlementManager;
+  settlementOnDemand: SettlementOnDemandManager;
+  subscription: SubscriptionManager;
+  transfer: TransferManager;
+  virtualAccount: VirtualAccountManager;
 
   get keyId(): string {
     return this._keyId;
@@ -57,7 +84,19 @@ export class Razorpay {
       },
     });
 
+    this.addon = new AddonManager(this);
+    this.customer = new CustomerManager(this);
+    this.invoice = new InvoiceManager(this);
+    this.item = new ItemManager(this);
     this.order = new OrderManager(this);
+    this.paymentLink = new PaymentLinkManager(this);
     this.payment = new PaymentManager(this);
+    this.plan = new PlanManager(this);
+    this.refund = new RefundManager(this);
+    this.settlement = new SettlementManager(this);
+    this.settlementOnDemand = new SettlementOnDemandManager(this);
+    this.subscription = new SubscriptionManager(this);
+    this.transfer = new TransferManager(this);
+    this.virtualAccount = new VirtualAccountManager(this);
   }
 }

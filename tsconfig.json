@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "outDir": "build",
+    "outDir": "build/esm",
     "rootDir": "src",
     "strict": true,
     "noImplicitAny": true,

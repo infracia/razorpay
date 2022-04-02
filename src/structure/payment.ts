@@ -3,8 +3,8 @@ import type {
   RawCardEntity,
   RawPaymentCapturePayload,
   RawPaymentEntity,
-  RawTransferCreateBody,
   RawTransferCreateResponse,
+  RawTransferPayload,
 } from "../types/index.js";
 
 export class Payment {
@@ -50,7 +50,7 @@ export class Payment {
    * https://razorpay.com/docs/api/route/#create-transfers-from-payments
    */
   createTransfer(
-    transfers: RawTransferCreateBody[]
+    transfers: RawTransferPayload[]
   ): Promise<RawTransferCreateResponse> {
     return this.client.axios
       .post<RawTransferCreateResponse>(`/payments/${this.raw.id}/transfers`, {

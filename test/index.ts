@@ -3,9 +3,17 @@ import type { AxiosError } from "axios";
 import { Razorpay } from "../src/index.js";
 
 async function main() {
+  if (process.env["RAZORPAY_ID"] === undefined) {
+    throw Error("environment key not found: RAZORPAY_ID");
+  }
+
+  if (process.env["RAZORPAY_SECRET"] === undefined) {
+    throw Error("environment key not found: RAZORPAY_SECRET");
+  }
+
   const api = new Razorpay({
-    keyId: "rzp_test_Gd3kNUYrH4Ot1Z",
-    keySecret: "dDPUVKhTrH6GnB72ukHukBJf",
+    keyId: process.env["RAZORPAY_ID"],
+    keySecret: process.env["RAZORPAY_SECRET"],
   });
 
   const order = await api.order
