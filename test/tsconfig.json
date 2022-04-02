@@ -20,5 +20,5 @@
     "noPropertyAccessFromIndexSignature": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
-  },
+  }
 }
