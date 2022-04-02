@@ -1,19 +1,41 @@
-name: razorpay
+name: Publish - Stable
 on:
-  release:
-    types: [created]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "npm version"
+        default: "patch"
+        required: true
+        type: string
+
 jobs:
-  build:
+  publish:
+    name: Publish
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      # Setup .npmrc file to publish to npm /
-      - uses: actions/setup-node@v2
+      - name: check out code 🛎
+        uses: actions/checkout@v2
+
+      - name: Install Node v17
+        uses: actions/setup-node@v2
         with:
-          node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm install 
-      - run: npm run build
-      - run: npm publish --access public
+          node-version: "17.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Synchronize current version
+        run: npm version --git-tag-version=false $(npm view @infracia/razorpay version)
+
+      - name: Update version
+        run: npm version --git-tag-version=false ${{ github.event.inputs.version }}
+
+      - name: Install root dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,12 +1,12 @@
 {
   "name": "@infracia/razorpay",
-  "version": "2.0.0",
+  "version": "0.0.0",
   "description": "razorpay api wrapper for nodejs",
   "main": "build/index.js",
   "types": "build/index.d.js",
   "repository": "https://github.com/infracia/razorpay",
-  "author": "Vijay Meena <sumarmeena@gmail.com>",
-  "license": "MIT",
+  "author": "Vijay Meena <vijayymmeena@gmail.com>",
+  "license": "Apache-2.0",
   "private": false,
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs",
@@ -14,6 +14,9 @@
     "build:cjs": "tsc --module CommonJs --outDir build/cjs && npm run postbuild:cjs",
     "postbuild:cjs": "node scripts/postbuild.mjs --path=build",
     "build:esm": "tsc",
+    "format": "prettier --write .",
+    "format-check": "prettier --check .",
+    "lint": "eslint ./",
     "type-check": "tsc --noemit"
   },
   "devDependencies": {
@@ -23,6 +26,7 @@
     "eslint": "^8.12.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "prettier": "^2.6.1",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
   },
