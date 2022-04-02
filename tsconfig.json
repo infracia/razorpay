@@ -4,6 +4,8 @@
     "module": "ESNext",
     "outDir": "build/esm",
     "rootDir": "src",
+    "declaration": true,
+    "sourceMap": true,
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -23,5 +25,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["test"]
+  "exclude": [
+    "test"
+  ]
 }

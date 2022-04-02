@@ -14,8 +14,14 @@
   "repository": "https://github.com/infracia/razorpay",
   "license": "Apache-2.0",
   "author": "Vijay Meena <vijayymmeena@gmail.com>",
-  "main": "build/index.js",
-  "types": "build/index.d.js",
+  "exports": {
+    ".": {
+      "import": "./build/esm/index.js",
+      "require": "./build/cjs/index.js"
+    }
+  },
+  "main": "./build/cjs/index.js",
+  "module": "./build/esm/index.js",
   "files": [
     "build",
     "CHANGELOG.md",
