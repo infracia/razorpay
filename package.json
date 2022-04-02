@@ -3,6 +3,14 @@
   "version": "0.0.0",
   "private": false,
   "description": "razorpay api wrapper for nodejs",
+  "keywords": [
+    "infracia",
+    "razorpay",
+    "payment",
+    "api",
+    "wrapper",
+    "gateway"
+  ],
   "repository": "https://github.com/infracia/razorpay",
   "license": "Apache-2.0",
   "author": "Vijay Meena <vijayymmeena@gmail.com>",
